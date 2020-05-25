@@ -16,8 +16,17 @@
 
         <Button Grid.Row="1"
                 Content="Снять"
-                Width="50"
-                Command="{Binding MakeMoneyCommand}"/>
-        
-            </Grid>
+                Command="{Binding MakeMoneyCommand}" Margin="55,80,583,-80" Click="Button_Click_1"/>
+        <Button x:Name="Баланс" Content="Баланс" HorizontalAlignment="Left" Margin="55,177,0,-175" Grid.Row="1" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.573,-3.35" Height="52" Click="Button_Click"/>
+        <TextBlock x:Name="Добро_пожаловать" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="51,0,0,-6" Width="711" RenderTransformOrigin="0.5,0.5" Height="54" FontFamily="Segoe UI Black" FontSize="18" Grid.Row="1">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.218"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="&#x9;&#x9;"/><Run Text="       "/><Run Text="Добро пожаловать в Банк Успешность"/></TextBlock>
+
+    </Grid>
 </Window>
