@@ -22,10 +22,7 @@ namespace ATMEmulator
     {
         public MainWindow()
         {
-            InitializeComponent();
-
-            var vm = new MainViewModel();
-            DataContext = vm;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,7 +32,12 @@ namespace ATMEmulator
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            
+        }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close(); //закрываем
         }
     }
 }
