@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ATMEmulator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -14,20 +15,32 @@
         <TextBlock Grid.Row="0"
                    Text="{Binding ATM.DisplayText, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Button Grid.Row="1"
+        <TextBlock Grid.Row="0"
+                   Text="{Binding VmText}"
+                   Margin="15 15 0 0"/>
+            
+        <Grid Grid.Row="1"
+              HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0"
                 Content="Снять"
-                Command="{Binding MakeMoneyCommand}" Margin="55,85,583,-55" Click="Button_Click_1"/>
-        <Button x:Name="Баланс" Content="Баланс" HorizontalAlignment="Left" Margin="55,174,0,-141" Grid.Row="1" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.573,-3.35" Height="52" Click="Button_Click"/>
-        <TextBlock x:Name="Добро_пожаловать" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="51,0,0,-6" Width="711" RenderTransformOrigin="0.5,0.5" Height="54" FontFamily="Segoe UI Black" FontSize="18" Grid.Row="1">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.218"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="&#x9;&#x9;"/><Run Text="       "/><Run Text="Добро пожаловать в Банк Успешность"/></TextBlock>
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="55,269,0,-239" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="52" Click="Button_Click_2"/>
+                Command="{Binding MakeMoneyCommand}" 
+                Width="50"
+                Margin="10"/>
+            
+        <Button Grid.Column="1"
+                Content="Баланс"
+                Command="{Binding ShowBalanceCommand}" 
+                Width="50"
+                Margin="10"/>
+        </Grid>
+
+
+
 
     </Grid>
 </Window>

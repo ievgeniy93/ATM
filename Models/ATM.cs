@@ -47,9 +47,17 @@ namespace ATMEmulator.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-        public void GetMoney()
+        public void GetMoney(int sum)
         {
-            
+            // Сверить сумму с балансом
+            // Если запрос больше чем баланс, то выдаст уведомление, что денег недостаточно
+            if (sum>Money)
+            {
+                DisplayText = "Введите меньшую сумму";
+            }
+            // Если запрос меньше или равно балансу то получит мани
+            // Посчитать остаток
+
         }
 
         public void MakeMoney()

@@ -16,6 +16,7 @@ namespace ATMEmulator
             ATM.DisplayText = "Добро пожаловать!";
 
             MakeMoneyCommand = new RelayCommand(x => MakeMoney());
+            ShowBalanceCommand = new RelayCommand(x => ShowBalance());
         }
 
         public ATM ATM { get; set; }
@@ -26,7 +27,14 @@ namespace ATMEmulator
         {
             ATM.DisplayText = "куку!";
         }
+        public RelayCommand ShowBalanceCommand { get; set; }
+        public void ShowBalance()
+        {
+            ATM.DisplayText = ATM.Money.ToString();
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public string VmText { get; set; }
     }
 }
