@@ -13,6 +13,8 @@ namespace ATMEmulator.Models
         public ATM()
         {
             Banknotes = new List<Banknote>();
+
+            DisplayText = "Добро пожаловать";
         }
 
         private string _displayText;
@@ -26,16 +28,11 @@ namespace ATMEmulator.Models
                 return _displayText;
             }
             set
-            { 
+            {
                 _displayText = value;
                 OnPropertyChanged("DisplayText");
             }
         }
-
-        /// <summary>
-        /// Сумма которую хочет снять пользователь
-        /// </summary>
-        public decimal Money { get; set; }
 
         public List<Banknote> Banknotes { get; set; }
 
@@ -43,26 +40,37 @@ namespace ATMEmulator.Models
 
         public void OnPropertyChanged([CallerMemberName]string prop = "")
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
 
-        public void GetMoney(int sum)
+        public void GetMoney(int userMoney)
         {
+            int money = GetSumMoney();
+
             // Сверить сумму с балансом
             // Если запрос больше чем баланс, то выдаст уведомление, что денег недостаточно
-            if (sum>Money)
+            if (userMoney > money)
             {
                 DisplayText = "Введите меньшую сумму";
             }
             // Если запрос меньше или равно балансу то получит мани
             // Посчитать остаток
-
+            else
+            {
+                DisplayText = "Возьмите деньги";
+                int ostatok = money - userMoney;
+            }
         }
 
         public void MakeMoney()
         {
 
         }
+
+        public int GetSumMoney()
+        {
+            return Banknotes.Select(x => x.Nominal).Sum();
+        }
+
     }
 }
