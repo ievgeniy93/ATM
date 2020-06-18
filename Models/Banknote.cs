@@ -11,5 +11,15 @@ namespace ATMEmulator.Models
     /// </summary>
     public class Banknote
     {
+        public int Nominal { get; set; }
+        public Valute Valute { get; set; }
     }
+
+    public enum Valute
+    {
+        Rub,
+        USD,
+        EUR
+    }
+
 }
