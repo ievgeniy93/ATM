@@ -17,7 +17,7 @@ namespace ATMEmulator.Models
 
     public enum Valute
     {
-        Rub,
+        RUB,
         USD,
         EUR
     }
