@@ -67,6 +67,7 @@ namespace ATMEmulator.Models
 
         }
 
+        
         public int GetSumMoney()
         {
             return Banknotes.Select(x => x.Nominal).Sum();

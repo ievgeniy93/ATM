@@ -11,7 +11,7 @@ namespace ATMEmulator.Models
         /// <summary>
         /// Номер счёта = 20 цифр.
         /// </summary>
-        public int IDNumber { get; set; }
+        public ulong IDNumber { get; set; }
 
         /// <summary>
         /// Валюта счета.
@@ -27,7 +27,14 @@ namespace ATMEmulator.Models
         /// Владелец счета.
         /// </summary>
         public string IDOwner { get; set; }
-
+        
+        /// <summary>
+        /// Имя владельца счета, пол.
+        /// </summary>
+        public void IDName(string name, Sex sex)
+        {
+        }
+        
         /// <summary>
         /// История операций по счёту 
         /// </summary>
@@ -48,5 +55,14 @@ namespace ATMEmulator.Models
         Date,
         Type,
         Amount,
+    }
+
+    /// <summary>
+    ///  Пол владельца счета
+    /// </summary>
+    public enum Sex
+    {
+        Woman,
+        Man,
     }
 }
