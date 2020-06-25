@@ -7,15 +7,13 @@ using static ATMEmulator.Enum.Enum;
 
 namespace ATMEmulator.Models
 {
-    /// <summary>
-    /// Купюра.
-    /// </summary>
-    public class Banknote
+    class Man
     {
-        public int Nominal { get; set; }
-        public Valute Valute { get; set; }
+        
+        public Man(string Name, Sex sex)
+        {         
+        }
+
+        
     }
-
-  
-
 }

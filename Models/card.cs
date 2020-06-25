@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ATMEmulator.Enum.Enum;
 
 namespace ATMEmulator.Models
 {   
@@ -14,7 +15,7 @@ namespace ATMEmulator.Models
         /// <summary>
         /// Физ. лицо.
         /// </summary>
-        public Individual Individual { get; set; }
+        public string Individual { get; set; } 
 
         /// <summary>
         /// Название банка.
@@ -24,7 +25,7 @@ namespace ATMEmulator.Models
         /// <summary>
         /// Тип карты (дебетовая или кредитная).
         /// </summary>
-        public CardType CardType { get; set; }
+        public CardsType CardType { get; set; }
 
         /// <summary>
         /// Кредитный лимит.
@@ -46,35 +47,5 @@ namespace ATMEmulator.Models
         /// </summary>
         public bool HasNFC { get; set; }
          
-    }
-
-
-    /// <summary>
-    /// Тип карты (дебитовая, кредитовая)
-    /// </summary>
-    public enum CardType
-    {
-        DebitCard,
-        CreditCard
-    }
-
-    /// <summary>
-    /// Свойства физ. лица (Имя, пол, возраст)
-    /// </summary>
-    public enum Individual
-    {
-        Name,
-        Sex,
-        Age
-    }
-
-    /// <summary>
-    /// Список банков
-    /// </summary>
-    public enum BankName
-    {
-        AlfaBank,
-        Sberbank,
-        HitBank
     }
 }
